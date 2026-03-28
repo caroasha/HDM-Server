@@ -1,0 +1,11 @@
+NODE_ENV=production
+PORT=3000
+HOST=0.0.0.0
+MONGODB_URI=mongodb+srv://restomanager_admin:Hdm%402002@cluster0.i5j7cns.mongodb.net/HdmPorfolio?retryWrites=true&w=majority&appName=Cluster0
+SESSION_SECRET=davixhdm_8x2k9m4p7q6r3s1v5w9n2y4b6c8d0e1f3g5h7j8k9l0
+ADMIN_EMAIL=davismcintyre5@gmail.com
+ADMIN_PASSWORD=Hdm@2002
+APP_URL=https://davixhdm.com
+MAX_FILE_SIZE=5242880
+CONTACT_EMAIL=davismcintyre5@gmail.com
+WHATSAPP_NUMBER=+254768784909

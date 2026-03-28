@@ -1,0 +1,20 @@
+davixhdm-portfolio/
+├── server.js
+├── package.json
+├── .env
+├── /public
+│   ├── /css
+│   │   └── style.css
+│   ├── /js
+│   │   └── main.js
+│   └── /uploads
+├── /views
+│   ├── index.ejs
+│   ├── admin.ejs
+│   ├── login.ejs
+│   └── partials
+│       ├── header.ejs
+│       └── footer.ejs
+└── /routes
+    ├── index.js
+    └── admin.js

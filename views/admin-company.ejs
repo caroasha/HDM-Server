@@ -1,0 +1,243 @@
+<%- include('partials/header') %>
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <a href="/admin/dashboard?tab=dashboard" class="list-group-item list-group-item-action">
+                    <i class="bi bi-speedometer2 me-2"></i> Dashboard
+                </a>
+                <a href="/admin/dashboard?tab=services" class="list-group-item list-group-item-action">
+                    <i class="bi bi-gear me-2"></i> Services
+                </a>
+                <a href="/admin/dashboard?tab=projects" class="list-group-item list-group-item-action">
+                    <i class="bi bi-folder me-2"></i> Projects
+                </a>
+                <a href="/admin/dashboard?tab=photos" class="list-group-item list-group-item-action">
+                    <i class="bi bi-images me-2"></i> Photos
+                </a>
+                <a href="/admin/dashboard?tab=messages" class="list-group-item list-group-item-action">
+                    <i class="bi bi-envelope me-2"></i> Messages
+                </a>
+                <a href="/admin/company" class="list-group-item list-group-item-action active">
+                    <i class="bi bi-building me-2"></i> Company Settings
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <!-- Flash Messages -->
+            <% if (success) { %>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <i class="bi bi-check-circle-fill me-2"></i> <%= success %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <% } %>
+            <% if (error) { %>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i> <%= error %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            <% } %>
+
+            <div class="card shadow-sm">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0"><i class="bi bi-building me-2"></i>Company Settings</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/admin/company?_method=PUT" method="POST">
+                        <input type="hidden" name="_method" value="PUT">
+                        
+                        <!-- Basic Information -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">Basic Information</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Company Name</label>
+                                    <input type="text" name="name" class="form-control" value="<%= company.name %>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tagline</label>
+                                    <input type="text" name="tagline" class="form-control" value="<%= company.tagline %>">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Description</label>
+                                    <textarea name="description" class="form-control" rows="2"><%= company.description %></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">Contact Information</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" value="<%= company.email %>">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Phone</label>
+                                    <input type="text" name="phone" class="form-control" value="<%= company.phone %>">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label class="form-label">WhatsApp</label>
+                                    <input type="text" name="whatsapp" class="form-control" value="<%= company.whatsapp %>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" name="address" class="form-control" value="<%= company.address %>">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">City</label>
+                                    <input type="text" name="city" class="form-control" value="<%= company.city %>">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Country</label>
+                                    <input type="text" name="country" class="form-control" value="<%= company.country %>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">Social Media Links</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-facebook me-1"></i> Facebook</label>
+                                    <input type="url" name="facebook" class="form-control" value="<%= company.facebook %>" placeholder="https://facebook.com/yourpage">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-twitter-x me-1"></i> Twitter/X</label>
+                                    <input type="url" name="twitter" class="form-control" value="<%= company.twitter %>" placeholder="https://twitter.com/yourhandle">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-instagram me-1"></i> Instagram</label>
+                                    <input type="url" name="instagram" class="form-control" value="<%= company.instagram %>" placeholder="https://instagram.com/yourprofile">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label"><i class="bi bi-linkedin me-1"></i> LinkedIn</label>
+                                    <input type="url" name="linkedin" class="form-control" value="<%= company.linkedin %>" placeholder="https://linkedin.com/company/yourcompany">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Branding -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">Branding</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Primary Color</label>
+                                    <input type="color" name="primaryColor" class="form-control form-control-color" value="<%= company.primaryColor %>">
+                                    <small class="text-muted">Current: <span style="color: <%= company.primaryColor %>"><%= company.primaryColor %></span></small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Secondary Color</label>
+                                    <input type="color" name="secondaryColor" class="form-control form-control-color" value="<%= company.secondaryColor %>">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Favicon & Logo -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">Favicon & Logo</h5>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Current Favicon</label>
+                                    <div class="mb-2">
+                                        <img src="/favicon.jpg" style="height: 32px; width: 32px; object-fit: cover;" class="border p-1 rounded">
+                                        <span class="ms-2 text-muted">favicon.jpg</span>
+                                    </div>
+                                    <small class="text-muted">Favicon is located at /public/favicon.jpg. Replace this file manually to update.</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Company Logo</label>
+                                    <% if (company.logo) { %>
+                                    <div class="mb-2">
+                                        <img src="<%= company.logo %>" style="max-height: 60px; max-width: 200px;" class="border p-1 rounded">
+                                    </div>
+                                    <% } %>
+                                    <form action="/admin/company/logo" method="POST" enctype="multipart/form-data" class="d-flex gap-2">
+                                        <input type="file" name="logo" class="form-control" accept="image/*">
+                                        <button type="submit" class="btn btn-primary">Upload Logo</button>
+                                    </form>
+                                    <small class="text-muted">Recommended size: 200x60px. Supported formats: JPG, PNG, GIF, WEBP</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SEO Settings -->
+                        <h5 class="mb-3" style="color: #0a5c8e;">SEO Settings</h5>
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Title</label>
+                                    <input type="text" name="metaTitle" class="form-control" value="<%= company.metaTitle %>">
+                                    <small class="text-muted">Appears in browser tab and search results (50-60 characters)</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Description</label>
+                                    <textarea name="metaDescription" class="form-control" rows="2"><%= company.metaDescription %></textarea>
+                                    <small class="text-muted">Appears in search results (150-160 characters)</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Meta Keywords</label>
+                                    <input type="text" name="metaKeywords" class="form-control" value="<%= company.metaKeywords %>">
+                                    <small class="text-muted">Comma-separated keywords for search engines</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-top pt-3">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-save me-2"></i> Save All Changes
+                            </button>
+                            <a href="/admin/dashboard" class="btn btn-secondary ms-2">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Auto-hide alerts
+setTimeout(function() {
+    document.querySelectorAll('.alert').forEach(function(alert) {
+        alert.style.transition = 'opacity 1s';
+        alert.style.opacity = '0';
+        setTimeout(function() {
+            alert.remove();
+        }, 1000);
+    });
+}, 5000);
+</script>
+
+<%- include('partials/footer') %>

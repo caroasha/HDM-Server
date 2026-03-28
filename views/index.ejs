@@ -1,0 +1,317 @@
+<%- include('partials/header') %>
+
+<!-- Hero Section -->
+<section class="hero py-5" style="background: linear-gradient(135deg, <%= company.primaryColor || '#0a5c8e' %>, <%= company.secondaryColor || '#1e3a5f' %>);">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-white">
+                <% if (company.logo) { %>
+                    <img src="<%= company.logo %>" alt="<%= company.name %>" style="max-height: 80px; margin-bottom: 20px;">
+                <% } %>
+                <h1 class="display-3 fw-bold mb-3"><%= company.name || 'WirMax Solutions' %></h1>
+                <h2 class="h3 mb-4"><%= company.tagline || 'Software and Web Development | Building Your Digital Presence' %></h2>
+                <p class="lead mb-4"><%= company.description || 'Professional software and web development company building your digital presence with cutting-edge technology and innovative solutions.' %></p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#services" class="btn btn-light btn-lg px-4">Our Services</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-4">Get in Touch</a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="bi bi-code-slash display-1 text-white-50"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Types of Websites Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Types of Websites We Develop</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-cart fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">E-commerce Sites</h5>
+                        <p class="card-text">Online stores with secure payment integration</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-building fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">Corporate Websites</h5>
+                        <p class="card-text">Professional business presence online</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-person fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">Portfolios & Blogs</h5>
+                        <p class="card-text">Showcase your work and share insights</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-window fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">Web Applications</h5>
+                        <p class="card-text">Custom web apps for your business needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-calendar-check fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">Booking Systems</h5>
+                        <p class="card-text">Online appointment and reservation systems</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <i class="bi bi-gear fs-1" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                        <h5 class="card-title mt-3">Custom Solutions</h5>
+                        <p class="card-text">Tailored software for your unique requirements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Why Choose WirMax Solutions</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-phone fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>Modern, Responsive Design</h5>
+                        <p class="text-muted">Websites that look great on all devices</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-lightning-charge fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>Fast Loading Speeds</h5>
+                        <p class="text-muted">Optimized for performance and user experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-heart fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>User-Friendly Interfaces (UI/UX)</h5>
+                        <p class="text-muted">Intuitive designs that engage visitors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-graph-up fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>SEO Optimized</h5>
+                        <p class="text-muted">Rank higher in search engine results</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-shield-lock fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>Secure & Scalable</h5>
+                        <p class="text-muted">Built with security and growth in mind</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex align-items-start">
+                    <i class="bi bi-headset fs-2 me-3" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                    <div>
+                        <h5>Ongoing Support</h5>
+                        <p class="text-muted">Reliable maintenance and technical support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Our Services</h2>
+        <div class="row">
+            <% if (services && services.length) { %>
+                <% services.forEach(service => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="bi bi-<%= service.icon %> display-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i>
+                            <h5 class="card-title mt-3"><%= service.title %></h5>
+                            <p class="card-text"><%= service.description %></p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            <% } else { %>
+                <div class="col-12 text-center text-muted">
+                    <p>No services added yet. Please check back later.</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Featured Projects</h2>
+        <div class="row">
+            <% if (projects && projects.length) { %>
+                <% projects.forEach(project => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <% if (project.image) { %>
+                        <img src="<%= project.image %>" class="card-img-top" style="height: 200px; object-fit: cover;" alt="<%= project.name %>">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= project.name %></h5>
+                            <p class="card-text"><%= project.description %></p>
+                            <% if (project.link) { %>
+                            <a href="<%= project.link %>" class="btn" style="background-color: <%= company.primaryColor || '#0a5c8e' %>; color: white;" target="_blank">View Project</a>
+                            <% } %>
+                        </div>
+                        <div class="card-footer">
+                            <% if (project.technologies && project.technologies.length) { %>
+                                <% project.technologies.forEach(tech => { %>
+                                <span class="badge me-1" style="background-color: <%= company.primaryColor || '#0a5c8e' %>;"><%= tech %></span>
+                                <% }) %>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            <% } else { %>
+                <div class="col-12 text-center text-muted">
+                    <p>No projects added yet. Please check back later.</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Our Work Gallery</h2>
+        <div class="row">
+            <% if (photos && photos.length) { %>
+                <% photos.forEach(photo => { %>
+                <div class="col-md-3 mb-3">
+                    <a href="<%= photo.path %>" data-lightbox="gallery" data-title="<%= photo.title %>">
+                        <img src="<%= photo.path %>" class="img-fluid rounded shadow-sm" alt="<%= photo.title %>">
+                    </a>
+                </div>
+                <% }) %>
+            <% } else { %>
+                <div class="col-12 text-center text-muted">
+                    <p>No photos added yet. Please check back later.</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: <%= company.primaryColor || '#0a5c8e' %>;">Connect With Us</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Get in Touch</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-envelope me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Email:</strong> <%= company.email || 'info@wirmaxsolutions.pxxl.click' %>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-phone me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Phone:</strong> <%= company.phone || '0768784909' %>
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-whatsapp me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>WhatsApp:</strong> <%= company.whatsapp || '+254768784909' %>
+                            </li>
+                            <% if (company.facebook) { %>
+                            <li class="mb-3">
+                                <i class="bi bi-facebook me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Facebook:</strong> <a href="<%= company.facebook %>" target="_blank"><%= company.facebook.replace('https://', '') %></a>
+                            </li>
+                            <% } %>
+                            <% if (company.twitter) { %>
+                            <li class="mb-3">
+                                <i class="bi bi-twitter-x me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Twitter:</strong> <a href="<%= company.twitter %>" target="_blank"><%= company.twitter.replace('https://', '') %></a>
+                            </li>
+                            <% } %>
+                            <% if (company.instagram) { %>
+                            <li class="mb-3">
+                                <i class="bi bi-instagram me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Instagram:</strong> <a href="<%= company.instagram %>" target="_blank"><%= company.instagram.replace('https://', '') %></a>
+                            </li>
+                            <% } %>
+                            <% if (company.linkedin) { %>
+                            <li class="mb-3">
+                                <i class="bi bi-linkedin me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>LinkedIn:</strong> <a href="<%= company.linkedin %>" target="_blank"><%= company.linkedin.replace('https://', '') %></a>
+                            </li>
+                            <% } %>
+                            <% if (company.address) { %>
+                            <li class="mb-3">
+                                <i class="bi bi-geo-alt me-2" style="color: <%= company.primaryColor || '#0a5c8e' %>;"></i> 
+                                <strong>Address:</strong> <%= company.address %>, <%= company.city || '' %> <%= company.country || 'Kenya' %>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Send a Message</h5>
+                        <form action="/contact" method="POST">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn w-100" style="background-color: <%= company.primaryColor || '#0a5c8e' %>; color: white;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('partials/footer') %>

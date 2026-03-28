@@ -1,0 +1,53 @@
+<%- include('partials/header', { user: null }) %>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-header" style="background: linear-gradient(135deg, #0a5c8e, #1e3a5f); color: white;">
+                    <h4 class="mb-0 text-center">
+                        <i class="bi bi-shield-lock me-2"></i>Admin Login
+                    </h4>
+                </div>
+                <div class="card-body p-4">
+                    <% if (error) { %>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i> <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    <% } %>
+                    
+                    <form action="/admin/login" method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control" id="username" name="username" 
+                                       value="info@wirmaxsolutions.pxxl.click" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn w-100" style="background-color: #0a5c8e; color: white;">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                        </button>
+                    </form>
+                    
+                    <hr class="my-4">
+                    
+                    <div class="text-center">
+                        <img src="/favicon.jpg" alt="WirMax Solutions" style="height: 40px; margin-bottom: 10px;">
+                        <p class="text-muted small mb-0">WirMax Solutions Admin Panel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
